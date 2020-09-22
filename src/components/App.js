@@ -27,19 +27,34 @@ class App extends Component {
         text: "Zapłacić za prąd",
         date: "2020-10-02",
         important: true,
-        active: false,
+        active: true,
         finishDate: null,
       }
     ]
   }
 
   handleDelete = (id) => {
-    console.log('delete id  ' + id);
+    const tasks = [...this.state.tasks];
+    const index = tasks.findIndex(task => task.id===id)
+    tasks.splice(index, 1);
+
+    this.setState({
+      tasks
+    })
   }
 
   handleChangeStatus = (id) => {
-    console.log('zmiana statusu na wykonany w id  ' + id);
-
+    let tasks = [...this.state.tasks];
+  
+    tasks.map(task => {
+      if(task.id === id) {
+        task.active = false;
+        task.finishDate = new Date().getTime()
+        }})
+        this.setState({
+          tasks
+          })  
+        
   }
 
   render() {
