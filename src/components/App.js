@@ -3,6 +3,9 @@ import '../css/App.css';
 import AddTask from './AddTask';
 import TaskList from './TaskList';
 
+//couter used in addTask for id
+let counter = 4
+
 class App extends Component {
   state = {
     tasks: [
@@ -35,7 +38,7 @@ class App extends Component {
 
   handleDelete = (id) => {
     const tasks = [...this.state.tasks];
-    const index = tasks.findIndex(task => task.id===id)
+    const index = tasks.findIndex(task => task.id === id)
     tasks.splice(index, 1);
 
     this.setState({
@@ -45,23 +48,47 @@ class App extends Component {
 
   handleChangeStatus = (id) => {
     let tasks = [...this.state.tasks];
-  
+
     tasks.map(task => {
-      if(task.id === id) {
+      if (task.id === id) {
         task.active = false;
         task.finishDate = new Date().getTime()
-        }})
-        this.setState({
-          tasks
-          })  
-        
+      }
+    })
+    this.setState({
+      tasks
+    })
+  }
+
+  addTask = (text, date, important) => {
+
+    const task = {
+      id: counter,
+      text,
+      date,
+      important,
+      active: true,
+      finishDate: null,
+    }
+
+    counter++
+
+    const tasks = [... this.state.tasks]
+
+    tasks.push(task)
+
+    this.setState({
+      tasks
+    })
+
+    return true
   }
 
   render() {
     return (
       <div className="App">
         <h1>TO-DO-APP</h1>
-        <AddTask />
+        <AddTask addTask={this.addTask} />
         <TaskList tasks={this.state.tasks} delete={this.handleDelete} change={this.handleChangeStatus} />
       </div>
     );
