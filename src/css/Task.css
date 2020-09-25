@@ -1,5 +1,5 @@
 
-.active__task {
+.active__task, .done__task {
    display: flex;
    flex-wrap: wrap;
    justify-content: center;
@@ -25,5 +25,5 @@ flex-basis: 100%;
 
 
 .btn__done, .btn__delete {
-   margin: 20px;
+   margin: 10px;
 }
