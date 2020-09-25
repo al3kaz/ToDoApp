@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../css/AddTask.css'
 
 
 const AddTask = (props) => {
@@ -20,21 +21,47 @@ const AddTask = (props) => {
             setText("");
             setChecked(false);
          }
-      } else alert("wpisz nowe zadanie")
-
+      } else alert("you did not enter anything")
    }
+
 
    return (
       <div className="form">
-         <input type="text" value={text} placeholder="wpisz nowe zadanie" onChange={(e) => setText(e.target.value)} />
-         <input type="checkbox" id="priority" checked={checked} onChange={(e) => setChecked(!checked)} />
-         <label htmlFor="priority">Priorytet</label>
+         <input
+            className="form__input"
+            type="text" value={text}
+            placeholder="new to do"
+            onChange={(e) => setText(e.target.value)}
+         />
+         <input
+            className="form__checkboc"
+            type="checkbox"
+            id="priority"
+            checked={checked}
+            onChange={(e) => setChecked(!checked)}
+         />
+         <label
+            style={{ color: "#6CB100" }}
+            htmlFor="priority">
+            PRIORITY
+         </label>
          <br />
-         <label htmlFor="">Do kiedy zrobić</label>
-         <input type="date" value={date} min={minDate} max={maxDate + "-12-31"} onChange={(e) => setDate(e.target.value)} />
+         <label htmlFor="">Limit date</label>
+         <input
+            className="form__date"
+            type="date" value={date}
+            min={minDate}
+            max={maxDate + "-12-31"}
+            onChange={(e) => setDate(e.target.value)}
+         />
          <br />
-         <button onClick={handleClick}>Dodaj</button>
-      </div>
+
+         <button
+            className="form__btn"
+            onClick={handleClick}>
+            Add a new task
+         </button>
+      </div >
    );
 }
 

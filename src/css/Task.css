@@ -1,0 +1,29 @@
+
+.active__task {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+line-height: 30px;
+border-bottom: solid 2px #3D3D40;
+}
+
+.active__task_text, .done__task_text {  
+flex-basis: 100%; 
+   width: 80%;
+   margin: 0 auto;
+   font-size: 0.8rem;
+   }
+
+   @media only screen and (min-width: 576px) {
+      .active__task_text, .done__task_text {
+        font-size: 1rem;
+      }
+      .fas {
+         font-size: 20px;
+      }
+    }
+
+
+.btn__done, .btn__delete {
+   margin: 20px;
+}

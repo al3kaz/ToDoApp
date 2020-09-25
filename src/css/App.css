@@ -1,4 +1,19 @@
 .App {
+  width: 80%;
+margin: 0 auto;
   text-align: center;
+  color: white;
+  font-family: 'Roboto', sans-serif;
 }
 
+.title {
+  font-family: 'Indie Flower', cursive;
+  font-size: 5rem;
+  color: #D75437;
+}
+
+@media only screen and (max-width: 576px) {
+  .App {
+    font-size: 10px;
+  }
+}

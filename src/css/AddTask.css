@@ -1,0 +1,19 @@
+.form__input, .form__date {
+margin: 10px;
+padding: 5px;
+background-color:#3D3D40;
+color: whitesmoke;
+}
+
+.form__btn {
+   margin: 10px;
+   padding: 5px 10px;
+   text-transform: uppercase;
+   background-color:#5A69C7;
+   border-radius: 5px;
+   box-shadow: 0 2px 4px 0 #888888;
+}
+
+.form__btn:hover {
+   cursor: pointer;
+ }

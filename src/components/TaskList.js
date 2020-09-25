@@ -1,6 +1,8 @@
 import React from 'react';
 import Task from './Task';
 
+import '../css/TaskList.css'
+
 const TaskList = (props) => {
 
 
@@ -16,12 +18,12 @@ const TaskList = (props) => {
    return (
       <>
          <div className="active">
-            <h1>Zadania do wykonania</h1>
-            <p>{activeTasks}</p>
+            <h1 className="active__title">My tasks</h1>
+            <p className="active__tasks">{activeTasks}</p>
          </div>
          <div className="done">
-            <h2>Zadania zrobione <em>({done.length})</em></h2>
-            <p>{doneTasks}</p>
+            <h2 className="done_title">Done <em>( {done.length} )</em></h2>
+            <p className="done_tasks">{doneTasks}</p>
          </div>
       </>
    );
