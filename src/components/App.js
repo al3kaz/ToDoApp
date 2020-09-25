@@ -87,7 +87,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1 className="title">Planner</h1>
+        <h1 className="title">To Do List</h1>
         <AddTask addTask={this.addTask} />
         <TaskList tasks={this.state.tasks} delete={this.handleDelete} change={this.handleChangeStatus} />
       </div>
